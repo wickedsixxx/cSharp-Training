@@ -31,7 +31,6 @@ namespace MyFirstProject
             }
 
             Console.ReadLine();
-
         }
     }
 }
