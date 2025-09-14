@@ -7,14 +7,32 @@ namespace MyFirstProject
         private static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter the text: ");
-            string text = Console.ReadLine();
+            Console.WriteLine("Enter the password: ");
 
-            for (int i = text.Length - 1; i >= 0; i --)
+            string userPassword = Console.ReadLine();
+
+            Console.WriteLine("Enter the password again: ");
+
+            string password = Console.ReadLine();
+
+
+
+           if (string.IsNullOrEmpty(userPassword) && string.IsNullOrEmpty(password) ) //veya if (userPassword == "" && password == "")
             {
-                Console.WriteLine(text[i]);
+                Console.WriteLine("Enter password pls");
+            }
+
+            else if (userPassword == password)
+            {
+                Console.WriteLine("correct password");
+            }
+
+            else if (userPassword != password)
+            {
+                Console.WriteLine("passwords do not match");
             }
             Console.ReadLine();
+
         }
     }
 }
