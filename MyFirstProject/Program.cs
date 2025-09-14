@@ -11,7 +11,6 @@ namespace MyFirstProject
 
             int[] angles = new int [angleCount];
 
-
             for (int i = 0; i < angles.Length; i++)
             {
                 Console.WriteLine($"enter angle {i + 1 }: ");
