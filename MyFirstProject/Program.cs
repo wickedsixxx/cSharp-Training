@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace MyFirstProject
 {
@@ -6,31 +7,26 @@ namespace MyFirstProject
     {
         private static void Main(string[] args)
         {
+            const int angleCount = 3;
 
-            Console.WriteLine("Enter the password: ");
-
-            string userPassword = Console.ReadLine();
-
-            Console.WriteLine("Enter the password again: ");
-
-            string password = Console.ReadLine();
+            int[] angles = new int [angleCount];
 
 
-
-           if (string.IsNullOrEmpty(userPassword) && string.IsNullOrEmpty(password) ) //veya if (userPassword == "" && password == "")
+            for (int i = 0; i < angles.Length; i++)
             {
-                Console.WriteLine("Enter password pls");
+                Console.WriteLine($"enter angle {i + 1 }: ");
+                angles[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-            else if (userPassword == password)
+            int angleSum = 0;
+
+            foreach (int angle in angles)
             {
-                Console.WriteLine("correct password");
+                angleSum += angle;
             }
 
-            else if (userPassword != password)
-            {
-                Console.WriteLine("passwords do not match");
-            }
+            Console.WriteLine(angleSum ==180 ? "valid" : "invalid");
+
             Console.ReadLine();
 
         }
