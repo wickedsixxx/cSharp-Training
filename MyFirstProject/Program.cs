@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MyFirstProject
 {
@@ -6,19 +7,41 @@ namespace MyFirstProject
     {
         private static void Main(string[] args)
         {
-            const int angleCount = 3;
-            int angleSum = 0;
 
-            for (int i = 0; i < angleCount; i++)
+            Console.Write("How much numbers do you want to check? ");
+            int numbersToCheck = int.Parse(Console.ReadLine());
+
+            List<int> evenNumberList = new List<int>();
+            List<int> oddNumberList = new List<int>();
+
+            for (int i = 0; i <numbersToCheck; i++)
             {
-                Console.WriteLine($"enter angle {i + 1}: ");
-                angleSum += Convert.ToInt32(Console.ReadLine());
+                Console.Write("enter number to even/odd check: ");
+            int numbers = int.Parse(Console.ReadLine());
+
+                if (numbers % 2 == 0)
+                {
+
+                    evenNumberList.Add(numbers);
+                }
+
+                else
+                {
+
+                    oddNumberList.Add(numbers);
+                }
+            }
+            Console.WriteLine("\nEven number list: ");
+            foreach (int n in evenNumberList)
+            {
+                Console.WriteLine(n);
             }
 
-            Console.WriteLine(angleSum == 180 ? "valid" : "invalid");
-
-            Console.ReadLine();
-
+            Console.WriteLine("\nOdd number list: ");
+            foreach (int n in oddNumberList)
+            {
+                Console.WriteLine(n);
+            }
         }
     }
 }
